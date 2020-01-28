@@ -17,7 +17,8 @@ def histogram(longstring):
 def unique_words(hist):
     i = 0
     for key in hist:
-        i += 1
+        if hist[key] == 1:
+            i += 1
     return i
 
 
