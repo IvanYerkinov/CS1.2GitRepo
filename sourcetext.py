@@ -36,4 +36,3 @@ if __name__ == "__main__":
     his = histogram(get_file(sys.argv[1]))
     print(unique_words(his))
     print(frequency(his, "and"))
-    print(his)
