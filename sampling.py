@@ -1,5 +1,5 @@
 from sourcetext import histogram
-from random import randint, choices, uniform
+from random import randint, uniform
 
 
 def rand_sample(hist):
