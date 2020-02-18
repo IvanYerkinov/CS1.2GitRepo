@@ -33,15 +33,16 @@ class MarkovChain:
         # TODO: generate a sentence num_words long using the markov chain
         sentence = []
         chain = self.markov_chain
-        sentence.append(self.first_word)
-        newword = chain[self.first_word].sample()
-        newword = "".join(newword)
+        newword = self.first_word
+        sentence.append(newword)
+        # newword = chain[self.first_word].sample()
+        # newword = "".join(newword)
         for i in range(num_words):
-            sentence.append(newword)
             newword = chain[newword].sample()
             newword = "".join(newword)
+            sentence.append(newword)
 
-        return sentence
+        return " ".join(sentence)
         pass
 
     def print_chain(self):
