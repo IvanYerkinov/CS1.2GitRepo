@@ -62,7 +62,7 @@ class Listogram(list):
         for i in self:
             probval.append(i[0])
             probdist.append(i[1]/lin)
-        return random.choices(probval, probdist)
+        return "".join(random.choices(probval, probdist))
 
 
 def print_histogram(word_list):

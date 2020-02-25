@@ -1,4 +1,5 @@
 from dictogram import Dictogram
+from random import randint
 
 
 class MarkovChain:
@@ -9,7 +10,7 @@ class MarkovChain:
         # Example: for "one fish two fish red fish blue fish"
         # {"one": {fish:1}, "fish": {"two":1, "red":1, "blue":1}, "two": {"fish":1}, "red": {"fish":1}, "blue": {"fish:1"}}
         self.markov_chain = self.build_markov(word_list)
-        self.first_word = list(self.markov_chain.keys())[0]
+        self.first_word = list(self.markov_chain.keys())[randint(0, len(self.markov_chain.keys()))]
 
     def build_markov(self, word_list):
         markov_chain = {}
@@ -52,4 +53,4 @@ class MarkovChain:
 
 markov_chain = MarkovChain(["one", "fish", "two", "fish", "red", "fish", "blue", "fish"])
 markov_chain.print_chain()
-print(markov_chain.walk(10))
+print(markov_chain.walk(randint(10, 30)))
