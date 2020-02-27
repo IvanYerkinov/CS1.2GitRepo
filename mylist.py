@@ -26,6 +26,14 @@ class LinkedList():
         self.temp = self.temp.next
         return ret
 
+    def items(self):
+        items = []
+        node = self.head
+        while node is not None:
+            items.append(node.data)
+            node = node.next
+        return items
+
     def append(self, data):
         if self.tail is None:
             self.head = Node(data)
@@ -46,6 +54,8 @@ class LinkedList():
 
     def __getitem__(self, key):
         temp = self.head
+        if self.head is None:
+            return 0
         for i in range(0, key):
             temp = temp.next
             if temp is None:
@@ -71,6 +81,17 @@ class LinkedList():
             del self.tail.next
             self.tail.next = None
         pass
+
+    def find(self, value):
+        index = 0
+        node = self.head
+        while node is not None:
+            if node.data == value:
+                return index
+            else:
+                index += 1
+                node = node.next
+        return None
 
     def pop_front(self):
         temp = self.head
