@@ -43,6 +43,11 @@ class LinkedList():
             self.tail = self.tail.next
         pass
 
+    def prepend(self, data):
+        temp = self.head
+        self.head = Node(data)
+        self.head.next = temp
+
     def length(self):
         count = 0
         temp = self.head

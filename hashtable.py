@@ -42,7 +42,7 @@ class HashTable(object):
         val = []
         for b in self.buckets:
             if b.length() > 0:
-                val.append(b[0])
+                val.append(b[0][1])
         return val
 
     def items(self):
@@ -115,7 +115,7 @@ class HashTable(object):
         # TODO: Otherwise, raise error to tell user delete failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
         if self.contains(key) is True:
-            self.buckets[self._bucket_index(key)][0][1] = None
+            self.buckets[self._bucket_index(key)][0] = None
         else:
             raise KeyError('Key not founds: {}'.format(key))
 
