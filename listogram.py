@@ -64,6 +64,13 @@ class Listogram(list):
             probdist.append(i[1]/lin)
         return "".join(random.choices(probval, probdist))
 
+    def count(self, word):
+        count = 0
+        for i in self:
+            if i[0] == word:
+                count += 1
+        return count
+
 
 def print_histogram(word_list):
     print()

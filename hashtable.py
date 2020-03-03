@@ -73,6 +73,14 @@ class HashTable(object):
         else:
             return True
 
+    def count(self, word):
+        count = 0
+        for i in self.buckets:
+            if i[0][0] == word:
+                count += 1
+        return count
+
+
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
